@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrity Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dropzone.min.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body id="bodyy">
+    <nav class="navbar bg-dark justify-content-center shadow-lg p-3 mb-5"">
+    <a class="navbar-brand text-light font-weight-bolder" href="#"><h2>Celebrity Classifier</h2></a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+        <div class="col card-wrapper shadow-lg p-3 mb-5 " data-player="Alia_Bhatt">
+                <div class="card border-0">
+                    <div class="position-relative rounded overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100 " src="C:\Users\91830\OneDrive\Desktop\Classifier\UI\images\th (58).jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Alia Bhatt</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col card-wrapper shadow-lg p-3 mb-5" data-player="MS_Dhoni">
+                    <div class="card border-0">
+                        <div class="position-relative rounded overflow-hidden mx-auto custom-circle-image">
+                            <img class="w-100 h-100" src="C:\Users\91830\OneDrive\Desktop\Classifier\UI\images\th - 2024-08-30T215317.981.jpg" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4 class="text-uppercase card-title">MS Dhoni</h4>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col card-wrapper shadow-lg p-3 mb-5" data-player="Kartik_Aaryan">
+                    <div class="card border-0">
+                        <div class="position-relative rounded overflow-hidden mx-auto custom-circle-image">
+                            <img class="w-100 h-100" src="C:\Users\91830\OneDrive\Desktop\Classifier\UI\images\th (95).jpg" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4 class="text-uppercase card-title">Kartik Aaryan </h4>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="col card-wrapper shadow-lg p-3 mb-5" data-player="Sania_Mirza">
+                <div class="card border-0">
+                    <div class="position-relative rounded overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="C:\Users\91830\OneDrive\Desktop\Classifier\UI\images\th (45).jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Sania Mirza</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col card-wrapper shadow-lg p-3 mb-5" data-player="The_Rock">
+                <div class="card border-0">
+                    <div class="position-relative rounded overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="C:\Users\91830\OneDrive\Desktop\Classifier\UI\images\th (79).jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">The Rock</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <div id="browse2">
+                <div>
+                    <div>
+                        <form action="/file-upload" class="dropzone shadow-lg p-3 mb-5 rounded-circle" id="dropzone">
+                            <div class="dz-message needsclick">
+                                <img src="./images/upload.png" width="50vw" height="50vw"><br>
+                                <span class="note needsclick"><b>Drop files here or click to upload</b></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="browse1">
+                <div class="row">
+                    <div>
+                        <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br>
+
+            <div class="error" id="error" >
+                <p><b>"Can't classify image. Classifier was not able to detect face and two eyes properly"</b></p>
+            </div>
+
+            <div class="" id="resultHolder"></div>
+            <div id="divClassTable">
+                <table id="classTable" class="table-dark">
+                        <tr>
+                            <th>Player</th>
+                            <th>Probability Score</th>
+                        </tr>
+                        <tr>
+                            <td>Alia Bhatt</td>
+                            <td id="score_Alia_Bhatt"></td>
+                        </tr>
+                        <tr>
+                            <td>Ms Dhoni</td>
+                            <td id="score_Ms_Dhoni"></td>
+                        </tr>
+                        <tr>
+                            <td>Kartik Aaryan</td>
+                            <td id="score_Kartik_Aaryan"></td>
+                        </tr>
+                        <tr>
+                            <td>The Rock</td>
+                            <td id="score_The_Rock"></td>
+                        </tr>
+                        <tr>
+                            <td>Sania Mirza</td>
+                            <td id="score_Sania_Mirza"></td>
+                        </tr>
+                </table>
+            </div>
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+</html>
